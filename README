@@ -4,6 +4,8 @@ Após isso, é necessário entrar na pasta do projeto e executar o comando abaix
 
 ./install.sh
 
+Na primeira execução em "Rebuild container [y/N]? " selecione "y" para buildar os containers.
+
 Por ultimo abra o navegador e acesse o localhost:80
 
 Caso ocorra algum erro ao subir o container do Nginx, verifique se já existe algum serviço utilizando a porta 80

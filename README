@@ -8,5 +8,5 @@ Por ultimo abra o navegador e acesse o localhost:80
 
 Caso ocorra algum erro ao subir o container do Nginx, verifique se já existe algum serviço utilizando a porta 80
 (o Apache costuma utilizar por padrão).
-pode ser preciso para por um tempo o serviço que está utilizando a porta 80, ou alterar a porta do Nginx no arquivo docker-compose.yml
+pode ser preciso parar por um tempo o serviço que está utilizando a porta 80, ou alterar a porta do Nginx no arquivo docker-compose.yml
 (no caso do apache - "service apache2 stop").

@@ -1,0 +1,43 @@
+version: "3.2"
+services:
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ../:/var/www/myproj
+      - ./nginx/app-myproj.conf:/etc/nginx/conf.d/default.conf
+
+  myproj-php82:
+    container_name: desafio-gesuas
+    build: php82
+    volumes:
+      - ../:/var/www/myproj
+    working_dir: /var/www/myproj
+    ports:
+      - 9074:9000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  mysql:
+    image: mariadb:10.5.8
+    volumes:
+      - ./database:/tmp/database
+    environment:
+      - MYSQL_DATABASE=myproj
+      - MYSQL_ROOT_PASSWORD=dg@123
+    ports:
+      - '3306:3306'
+    command: mysqld --init-file="/tmp/database/install_db.sql"
+
+volumes:
+  elastic-volume:
+    driver: local
+
+networks:
+  minha-rede:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

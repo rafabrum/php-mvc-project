@@ -1,5 +1,3 @@
-Para instalação do projeto, é necessário o Docker e o Docker Compose instalados na máquina.
-
 Primeiro passo é clonar o repositório ou baixar o Zip do projeto.
 
 Após isso, é necessário entrar na pasta do projeto e executar o comando abaixo para subir os containers:
@@ -8,7 +6,7 @@ Após isso, é necessário entrar na pasta do projeto e executar o comando abaix
 
 Por ultimo abra o navegador e acesse o localhost:80
 
-Caso ocorra algum erro ao tetar subir o container do Nginx, verifique se já existe algum serviço utilizando a porta 80
+Caso ocorra algum erro ao subir o container do Nginx, verifique se já existe algum serviço utilizando a porta 80
 (o Apache costuma utilizar por padrão).
 pode ser preciso para por um tempo o serviço que está utilizando a porta 80, ou alterar a porta do Nginx no arquivo docker-compose.yml
 (no caso do apache - "service apache2 stop").
